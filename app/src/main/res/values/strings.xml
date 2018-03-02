@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PBZChucker</string>
+
+    <string-array name="app_selection">
+        <item>Pebble App</item>
+        <item>Gadgetbridge</item>
+    </string-array>
 </resources>
