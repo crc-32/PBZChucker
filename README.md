@@ -1,5 +1,5 @@
 # PBZChucker
-UI to install PBZs using Pebble or Gadgetbridge app
+
 ## What it is
 An Android app to install Pebble PBZ firmware files using either the official Pebble app or the Gadgetbridge app.
 
