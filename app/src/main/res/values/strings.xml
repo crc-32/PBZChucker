@@ -1,8 +1,14 @@
 <resources>
+    <!-- GLOBAL -->
     <string name="app_name">PBZChucker</string>
 
+    <!-- MAINACTIVITY -->
     <string-array name="app_selection">
         <item>Pebble App</item>
         <item>Gadgetbridge</item>
     </string-array>
+    <string name="flash_btn">Flash</string>
+    <string name="file_btn">Select File</string>
+    <string name="comp_note">Neither Gadgetbridge or the Pebble App support files selected from the menu past Android 5</string>
+
 </resources>

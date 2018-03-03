@@ -24,10 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="48dp"
-        android:text="Select File"
+        android:text="@string/file_btn"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_select" />
+        app:layout_constraintTop_toBottomOf="@+id/app_select"
+        android:layout_marginRight="16dp" />
 
     <EditText
         android:id="@+id/fileName"
@@ -38,13 +39,15 @@
         android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Path"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/file_select"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_select" />
+        app:layout_constraintTop_toBottomOf="@+id/app_select"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="start" />
 
     <Button
         android:id="@+id/flash"
@@ -53,20 +56,21 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="148dp"
         android:layout_marginStart="148dp"
-        android:text="Flash"
+        android:text="@string/flash_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/compNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Neither Gadgetbridge or the Pebble App support files selected from the menu past Android 5"
+        android:text="@string/comp_note"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fileName" />
+        app:layout_constraintTop_toBottomOf="@+id/fileName"
+        android:layout_marginLeft="8dp" />
 
 </android.support.constraint.ConstraintLayout>

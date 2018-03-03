@@ -28,12 +28,14 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class MainActivity extends AppCompatActivity {
     String chosen = null;
     Uri uchosen = null;
+    EditText path = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        path = findViewById(R.id.fileName);
 
-        Button fileButton = (Button) findViewById(R.id.file_select);
+        Button fileButton = findViewById(R.id.file_select);
         fileButton.setOnClickListener( new View.OnClickListener() {
 
             @Override
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 chooseFile();
             }
         });
-        Button flashButton = (Button) findViewById(R.id.flash);
-        final Spinner appChoice = (Spinner) findViewById(R.id.app_select);
+        Button flashButton = findViewById(R.id.flash);
+        final Spinner appChoice = findViewById(R.id.app_select);
         flashButton.setOnClickListener( new View.OnClickListener() {
 
             @Override
@@ -53,13 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     appID = "nodomain.freeyourgadget.gadgetbridge";
                 }
-                EditText path = (EditText) findViewById(R.id.fileName);
                 chosen = path.getText().toString();
                 attemptFlash(chosen, appID);
             }
         });
-        EditText path = (EditText) findViewById(R.id.fileName);
-        path.setText(Environment.getExternalStorageDirectory().getPath() + "/");
+        path.setText(Environment.getExternalStorageDirectory().getPath() + "/"); //XXX: Needs to use resource placeholders to fit best practises
     }
 
     private static final int FILE_SELECT_CODE = 0;
@@ -86,10 +86,8 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case FILE_SELECT_CODE:
                 if (resultCode == RESULT_OK) {
-                    // Get the Uri of the selected file
                     Uri uri = data.getData();
                     Log.d(TAG, "File Uri: " + uri.toString());
-                    EditText path = (EditText) findViewById(R.id.fileName);
                     path.setText(uri.getPath());
                     uchosen = uri;
                 }
@@ -110,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         if(appID.equals("com.getpebble.android.basalt")){
             sendIntent.setComponent(new ComponentName("com.getpebble.android.basalt", "com.getpebble.android.main.activity.MainActivity"));
         }else{
-            sendIntent.setComponent(new ComponentName("nodomain.freeyourgadget.gadgetbridge", "nodomain.freeyourgadget.gadgetbridge.activities.FwAppInstallerActivity"));
+            sendIntent.setComponent(new ComponentName("nodomain.freeyourgadget.gadgetbridge", "nodomain.freeyourgadget.gadgetbridge.activities.FwAppInstallerActivity")); //TODO: Add support for Google Play unofficial build
         }
         sendIntent.setPackage(appID);
         sendIntent.setAction("android.intent.action.VIEW");
