@@ -3,12 +3,19 @@
     <string name="app_name">PBZChucker</string>
 
     <!-- MAINACTIVITY -->
-    <string-array name="app_selection">
-        <item>Pebble App</item>
-        <item>Gadgetbridge</item>
-    </string-array>
     <string name="flash_btn">Flash</string>
     <string name="file_btn">Select File</string>
-    <string name="comp_note">Neither Gadgetbridge or the Pebble App support files selected from the menu past Android 5</string>
+
+    <!-- FLASHSERVICE -->
+    <string name="file_404">Couldn\'t find the file to flash</string>
+    <string name="file_noread">Couldn\'t read the file to flash correctly</string>
+    <string name="file_badjson">Couldn\'t parse the update manifest</string>
+    <string name="unknowne">Unknown error occurred</string>
+    <string name="bt_nodevice">No Pebble found in paired devices</string>
+    <string name="bt_connfail">Failed to connect to pebble</string>
+    <string name="confirm_denied">Request to flash was denied by user</string>
+
+    <!-- CONFIRMACTIVITY -->
+    <string name="title_activity_confirm_update">Confirm Update</string>
 
 </resources>
